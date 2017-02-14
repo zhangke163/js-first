@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>对角边框渐变</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+	<script src="2.js"></script>
+</head>
+<style>
+	.box{
+		width: 300px;
+		height: 200px;
+		border:1px solid black;
+		margin: 10px;
+		float: left;
+		position: relative;
+	}
+	.box1{
+		width: 200px;
+		height: 300px;
+	}
+	.line-top{
+		position: absolute;
+		left: -1px;
+		top:-1px;
+		width: 0;
+		height: 1px;
+		background-color: pink;
+	}
+	.line-bottom{
+		position: absolute;
+		right: -1px;
+		bottom:-1px;
+		width: 0;
+		height: 1px;
+		background-color: pink;
+	}
+	.line-left{
+		position: absolute;
+        left: -1px;
+        top: -1px;
+        width: 1px;
+        height: 0;
+        background-color: pink;
+	}
+	.line-right{
+		position: absolute;
+		right: -1px;
+		bottom: -1px;
+		width: 1px;
+		height: 0;
+		background-color: pink;
+	}
+</style>
+<body>
+	<div class="box box1">1
+		<div class="line-top"></div>
+		<div class="line-bottom"></div>
+		<div class="line-left"></div>
+		<div class="line-right"></div>
+	</div>
+	<div class="box">2
+	    <div class="line-top"></div>
+		<div class="line-bottom"></div>
+		<div class="line-left"></div>
+		<div class="line-right"></div>
+	</div>
+	<div class="box">3
+        <div class="line-top"></div>
+		<div class="line-bottom"></div>
+		<div class="line-left"></div>
+		<div class="line-right"></div>
+	</div>
+	<div class="box box1">4
+        <div class="line-top"></div>
+		<div class="line-bottom"></div>
+		<div class="line-left"></div>
+		<div class="line-right"></div>
+	</div>
+</body>
+</html>

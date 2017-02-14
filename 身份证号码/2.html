@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>正则</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+</head>
+
+<body>
+	<!-- 输入框:18位 -->
+	<!-- 输出:出生日期为: 年 月 日 -->  <!-- 分组实现 -->
+	身份证号:<input type="text"name="idCard"value="">
+</body>
+<script>
+	var idCard=document.getElementsByName("idCard")[0];
+	idCard.onblur=function(){
+		var val=idCard.value;
+		var reg=/^\d{6}(\d{4})(\d{2})(\d{2})(\d){3}\w/;
+		var arr=reg.exec(val);
+		if(arr){
+            alert("出生日期为:"+arr[1]+"年"+arr[2]+"月"+arr[3]+"日");
+		}else{
+            alert("输入错误，请重新输入");
+		}
+	}
+	</script>
+</html>

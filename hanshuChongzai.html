@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+</head><script type="text/javascript">
+	// 金字塔函数
+	
+   //     var jinzita=function(hang){
+   //        for(var i=0;i<hang;i++){
+   //        	for(var k=0;k<(hang-i);k++){
+   //        		document.write("&nbsp");
+   //        	}
+   //        	for(var j=0;j<=i;j++){
+   //           document.write("*"+"&nbsp;");
+   //        	}
+   //        document.write("<br>");
+   //     }
+   // }
+   // var num=parseInt(prompt("请输入行数",""));
+   //     jinzita(num);
+   //十行十列表格，并实现交叉换色
+   // var tab=function(wid,hei,hang,lie,color1,color2,color3){
+   //      var wid,hei,hang,lie,color="";
+   //      document.write("<table border='1' width="+wid+" height="+hei+">");
+   //      for(tr=0;tr<hang;tr++){
+   //          for(td=0;td<lie;td++){
+   //          	if(tr%2==0&&td%2==1){
+   //              color=color1;
+	  //      	}
+	  //       else if (tr%2==1&&td%2==0) {
+   //               color=color2;
+	  //       }
+	  //       else{
+   //              color=color3;
+	  //       }
+   //           document.write("<td bgcolor="+color+">11111");
+   //           document.write("</td>");
+   //          }
+   //          document.write("<tr>");
+   //      	document.write("</tr>");
+   //      }
+   //      document.write("</table>");
+   // }
+   // tab(500,500,10,10,"#ffffff","#ff0000","#75fa08");
+
+
+   //函数重载
+   // function lie(a){
+   // 	if(typeof(a)=="number"){
+   // 		document.write("数值类型");
+   // 	}
+   // 	else if(typeof(a)=="sting"){
+   //      document.write("字符串类型");
+   // 	}
+   // 	else if (typeof(a)==boolean) {
+   // 		document.write("布尔类型");
+   // 	}
+   // 	else if ((typeof(a)==undefined)) {
+   // 		document.write("未定义类型");
+   // 	}
+   // 	else{
+   // 		document.write("空值");
+   //  }
+   // }
+   // var a=30;
+   // lie(a);
+
+
+   //通过return函数重载
+ //    function lie(a){
+	// return"参数是"+(typeof a)+";";
+ //    }
+ //   var a="30";
+ //   alert(lie(a));
+
+
+ //回调函数
+ // function lie(a){
+ // return"参数是"+(typeof a)+";";
+	// }
+ // var a=function(){
+ //   alert(1);
+ // }
+ // alert(lie(a));
+
+
+//函数回调
+ // function add(a,b){
+ // 	return a+b;
+ // }
+ // function jian(a,b){
+ // 	return a-b;
+ // }
+
+ // function main(a,b,fun){
+ // 	return fun(a,b);
+ // }
+ // alert(main(23,34,jian));
+ // function fuza (a,b,fun1,fun2) {
+ // 	return fun1(a,b)*fun2(a,b);
+ // }
+ // alert(fuza(45,20,add,jian));
+
+
+ //阶乘
+ // function jiecheng(num){
+ //    var ji=1;
+ //    for(var i=num;i>0;i--){
+ //    	ji*=i;
+ //    }
+ //    return ji;
+ // };
+ // alert(jiecheng(5));
+ //递归函数
+//  function jiecheng(num){
+//  	if (num==1) {
+//  		return num;
+//  	}else{
+//  		 return num*jiecheng(num-1);
+//  	}
+//  }
+// alert(jiecheng(5));
+
+
+//内置顶层函数
+// var num="张可";
+// var num1=escape(num)
+// document.write(escape(num));
+// document.write(unescape(num1));
+
+// var aa=undefined;
+// alert(String(aa));
+// alert(typeof String(aa));
+
+// alert(Math.PI);
+// var arr1=[1,2,3,4,5];
+// alert(typeof arr1);//object
+// var arr2=new Array(6,7,8,9,10);
+// alert(arr2);
+// var arr2=new Array(6); //六表示数组的长度
+// alert(arr2);
+// var arr=[];
+// arr[0]=1;
+// arr[1]=2;
+// arr[3]=4;
+// alert(arr.length);  //4
+
+// var arr1=new Array();
+// arr1[0]=1;
+// arr1[1]=2;
+// arr1[3]=4;
+// alert(arr1.length);   //4
+
+// for(var i=0;i<4;i++){
+// 	console.log(arr1[i]);   
+// }                         //输出a[2]为undefind;
+
+// for(var i in arr1){
+// 	console.log(arr1[i]);
+// }                          //不输出a[2];
+ 
+
+ //10个人的平均成绩
+ //不用函数
+ // var arr=new Array(98,88,41,42,75,92,43,71,72,86);
+ // var sum=0;
+ // for(i=0;i<arr.length;i++){
+ //       sum+=arr[i];
+ // }
+ // var avg=sum/arr.length;
+ // alert(avg);
+// //
+// 用函数
+ // var arr1=new Array(98,88,41,42,75,92,43,71,72,86);
+ // function average(arr){
+ // 	var sum=0;
+ // for(i=0;i<arr.length;i++){
+ //       sum+=arr[i];
+ // }
+ // var avg=sum/arr.length;
+ // return avg;
+ // }
+ // alert(average(arr1));
+
+
+//取出一个数组的最大值。
+    // 先假设数字中的第一个数为数组中的最大值，然后和后面的值进行比较，当第二个值大时，进行if语句，将第二个值赋值给arrMax中。当循环结束时，即返回最大值
+// var arr4=[3,450,34,56,12,2];
+// function arrMax(a){
+//     var arrMax=a[0];
+//     for(i=1;i<a.length;i++){
+//     	if(arrMax<a[i]){
+//     		arrMax=a[i];
+//     	}
+//     }
+//     return arrMax;
+// }
+// alert(arrMax(arr4));
+
+//让数组的值降序排列
+//  var arr4=[3,450,34,56,12,2];
+// function jiangXu(a){
+//    for(i=0;i<a.length;i++){
+//    	for(j=i+1;j<a.length;j++){
+//    		if(a[i]<a[j]){
+//    			temp=a[j];
+//    			a[j]=a[i];
+//    			a[i]=temp;
+//    		}
+//    	}
+//    }
+//    return a;
+// }
+// alert(jiangXu(arr4));
+
+
+
+//混合数组  
+//遍历二维数组需要两个for循环，遍历一维数组需要一个for循环。二维数组的数据类型是object
+// var arr2=[[1,2],[3,4],"name","sex",45,78];
+// for(var i=0;i<arr2.length;i++){
+// 	if(typeof arr2[i]=="object"){
+// 		for(var j=0;j<arr2[i].length;j++){
+// 			alert(arr2[i][j]);
+// 		}
+// 	}
+// 	else{
+// 		alert(arr2[i]);
+// 	}
+// // };
+//           function person(name,age,card){
+//             this.name=name; //this指构造函数new出来的对象（实例化的对象）    
+//             this.age=age;
+//             this["id-card"]=card;    
+//           }
+//           var xiaoming=new person ("张小明",18,111111);
+//           var zhangsan=new person ("张三",81,11122222111);
+//           // alert(xiaoming.name);
+
+//           for(var i in zhangsan){
+//             alert(i);//对象属性名（方法值）
+//             alert(zhangsan[i]);//obj[i]:对象的属性值（方法值）
+//           }
+
+          // 工厂模式
+          // function gongchang(color,size){
+          //   var iphone=new Object();
+          //   iphone.size=size;
+          //   iphone.color=color;
+          //   iphone.call=function(){
+          //      return "可以打电话";
+          //   }
+          //   return iphone;
+          // }
+          // var iphone4=gongchang("玫瑰红","5.6寸");
+          // alert(iphone4.call());
+
+
+
+                 // 构造函数
+          function iphone(color,size){
+            this.size=size;
+
+            this.color=color;
+          //   this.call=function(){
+          //      return "可以打电话";
+            }
+          // }
+          // var iphone6plus=new iphne("玫瑰红","6.4寸");
+          // alert(iphone6plus.call());
+
+   
+
+
+          // 原型
+          iphone.prototype={
+             call:function(){
+                alert("打电话");
+             },
+             msg:function(){
+                alert("发短信");
+             }
+          }
+          var iphone6plus=new iphone("土豪金","5.5寸");
+          alert(iphone6plus.call())
+
+
+
+</script>
+
+<body>
+	
+
+</body>
+</html>

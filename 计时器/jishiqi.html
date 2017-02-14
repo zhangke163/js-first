@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>秒，分，小时</title>
+</head>
+<body>
+    <div id="miao">0</div>
+    <div id="fen">0</div>
+    <div id="hour">0</div>
+
+</body>
+<script type="text/javascript">
+	 var miao=document.getElementById("miao");  //获取秒元素
+	 var num=0;
+	 var num1=0;
+	 var num2=0;
+     function time(){  
+     num++;
+     miao.innerHTML=num;
+     if(num>=59){
+     	num1++;
+     	fen.innerHTML=num1;
+     	num=-1;  //从零开始
+     	if(num1>=59){
+     		num2++;
+     		hour.innerHTML=num2;
+     		num1=-1;
+     	}
+     }
+	 }
+	 var t=setInterval(time,1000);   //1秒等于1000毫秒
+</script>
+</html>

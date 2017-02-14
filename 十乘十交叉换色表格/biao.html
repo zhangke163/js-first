@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>biao</title>
+</head>
+<body>
+	<script>
+	 function BIAO(h,l,c1,c2,c3){
+	   var  hang,lie,color="";
+       document.write("<table border=1>");
+       for(hang=0;hang<h;hang++){
+       document.write("<tr>");
+       for(lie=0;lie<l;lie++){
+         if(hang%2==0&&lie%2==1){
+           color=c1;
+         }
+          else if(hang%2==1&&lie%2==0){
+            color=c2;
+         }
+          else{
+            color=c3;
+        }
+       document.write("<td bgcolor="+color+">22222</td>");
+    }
+    document.write("</tr>");
+   }
+   document.write("</table>");
+ }
+
+	BIAO(10,10,"blue","red","green");
+	</script>
+	
+</body>
+</html>

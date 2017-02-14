@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>背景属性</title>
+	<style>
+	.box{
+		width: 100%;
+		height: 400px;
+		background-image: url(1.jpg);
+		background-color: rgb(255,234,67);
+		background-repeat: no-repeat;
+		background-position: center top; /* 左右居中，上下居中*/
+		background-attachment:fixed;
+	}
+	body{
+		height: 3000px;
+	}
+	.phone{
+		width: 98px;
+		height: 42px;
+		background:#ccc;
+		padding-top: 20px;
+		padding-left: 30px;
+		padding-right: 31px;
+	}
+    .phoneimg{
+		width: 21px;
+		height: 21px;
+		background: url(3.gif) ; 
+		float: left;
+		margin-right: 7px;
+	}
+	.two{
+		width: 21px;
+		height: 21px;
+		background: url(3.gif) 0px -51px;
+		float: left;
+		margin-right:4px;	
+	}
+	.three{
+		width: 21px;
+		height: 21px;
+		background: url(3.gif) 0px -100px;
+		float: left;
+		margin-right:3px;
+	}
+	.fore{
+		width: 21px;
+		height: 21px;
+		background: url(3.gif) 0px -153px;
+		float: left;
+		margin-right:6px;
+	}
+	.five{
+		width: 21px;
+		height: 21px;
+		background: url(3.gif) 0px -194px;
+		float: left;
+		margin-right:3px;
+	}
+	.phone span{
+		float: left;
+		font-size: 14px;
+	}
+	.fixed{
+		width: 100px;
+		height: 200px;
+		background: yellow;
+		position:fixed;
+		right: 0;
+		bottom: 0;
+		z-index: 0;
+	}
+	.relative{
+		width: 100px;
+		height: 200px;
+		border: 2px solid blue;
+		position: relative;
+		left: 20px;
+		top: 30px;
+	}
+	.father{
+		width: 300px;
+		height: 300px;
+	}
+	.absolute{
+		width: 200px;
+		height: 100px;
+		position: absolute;
+	}
+
+	</style>
+</head>
+
+<body>
+	<div class="box"></div>
+	<div class="phone">
+		<div class="phoneimg"></div>
+		<span>买手机</span>
+	</div>
+	<div class="phone">
+		<div class="two"></div>
+		<span>办套餐</span>
+	</div>
+	<div class="phone">
+		<div class="three"></div>
+		<span>办业务</span>
+	</div>
+	<div class="phone">
+		<div class="fore"></div>
+		<span>挑配件</span>
+	</div>
+		<div class="phone">
+		<div class="five"></div>
+		<span>个人中心</span>
+	</div>
+	</div>
+	<div class="fixed"></div>
+	<div class="relative">112</div>
+	<div class="father">
+		<div class="absolute">00</div>
+		<div class="absolute">01</div>
+		<div class="absolute">02</div>
+	</div>
+</body>
+</html>

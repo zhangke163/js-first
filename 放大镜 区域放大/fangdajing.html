@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>按区域放大</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+</head>
+<style>
+	.box{
+		width: 394px;
+		height: 315px;
+		position: relative;
+	}
+	.sbox{
+		width: 394px;
+     	height: 315px;
+     	border:1px solid black;
+     	position: relative;
+	}
+	.shubiao{
+		width: 100px;
+		height: 100px;
+		background-color: rgba(231,0,80,0.5);
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+	}
+	.zhezhao{
+		width: 394px;
+     	height: 315px;
+     	background-color: rgba(45,45,45,0);
+     	position: absolute;
+     	top: 0;
+     	left: 0;
+     	z-index: 10;
+	}
+	.bbox{
+		width: 394px;
+     	height: 315px;
+     	border:1px solid black;
+     	overflow: hidden;
+     	position: absolute;
+     	left: 406px;
+     	top:0;
+     	display: none;
+	}
+</style>
+<body>
+	<div class="box">
+		<div class="sbox">
+			<div class="shubiao"></div>
+			<div class="zhezhao"></div>
+			<img src="smallimg.jpg" alt="">
+		</div>
+		<div class="bbox">
+			<img src="bigimg.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var sbox=$(".sbox")[0];
+	var shubiao=$(".shubiao")[0];
+	var smallimg=$("img",sbox)[0];
+	var bbox=$(".bbox")[0];
+	var bigimg=$("img",bbox)[0];
+    var zhezhao=$(".zhezhao")[0];
+    hover(zhezhao,function(){
+    	shubiao.style.display="block";
+    	bbox.style.display="block";
+    },function(){
+        shubiao.style.display="none";
+    	bbox.style.display="none";
+    })
+    zhezhao.onmousemove=function(e){
+        var eve=e||window.event;
+        var ox=eve.offsetX-shubiao.offsetWidth/2;  //使得鼠标指针在中央显示
+        var oy=eve.offsetY-shubiao.offsetHeight/2;
+        //判断
+        var x=sbox.offsetWidth-shubiao.offsetWidth;  //移动的范围
+        var y=sbox.offsetHeight-shubiao.offsetHeight;
+        if(ox<=0){ox=0}
+        if(ox>=x){ox=x}
+        if(oy<=0){oy=0}
+        if(oy>=y){oy=y}
+        shubiao.style.left=ox+"px";
+        shubiao.style.top=oy+"px";
+        var lx=(bigimg.offsetWidth-bbox.offsetWidth)/(smallimg.offsetWidth-shubiao.offsetWidth);
+        var ly=(bigimg.offsetHeight-bbox.offsetHeight)/(smallimg.offsetHeight-shubiao.offsetHeight);
+        bigimg.style.marginLeft=-ox*lx+"px";
+        bigimg.style.marginTop=-oy*ly+"px";
+
+    }
+
+</script>
+</html>

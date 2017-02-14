@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>渐变</title>
+</head>
+<script src="function.js"></script>
+<style>
+	.box{
+		width: 300px;
+		height: 200px;
+		background-color: pink;
+        position: absolute;
+        top:0;
+        left: 0;
+	}
+</style>
+<body>
+<div class="box"></div>	
+</body>
+<script type="text/javascript">
+var box=getClass("box")[0];
+var flag=true;
+box.onclick=function(){
+    if(flag==true){
+ var speed=10;           //歩进值    
+function aa(){
+   var w=parseInt(getStyle(box,"left"));     //获取盒子的宽
+
+    w+=speed;
+    if(w>600){
+        clearInterval(t);
+        function bb(){
+            var w=parseInt(getStyle(box,"left"));
+            w-=speed;
+            box.style.left=w+"px";
+            if(w<300){
+                clearInterval(t1);
+                t=setInterval(aa,60);
+            }
+        }
+        var t1=setInterval(bb,60);
+    }
+    box.style.left=w+"px";
+}
+   var t=setInterval(aa,60);
+   flag=false; 
+    }
+
+
+}
+</script>
+</html>

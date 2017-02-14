@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>单价计算总价</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+</head>
+<style>
+	
+</style>
+<body>
+	<form action=""method=""name="mylogin">
+		购物车:<br>
+        数量:
+        <select name="num" id="">
+        	<option value="1" selected="true">1</option>
+        	<option value="2">2</option>
+        	<option value="3">3</option>
+        	<option value="4">4</option>
+        	<option value="5">5</option>
+        </select>&nbsp&nbsp&nbsp&nbsp&nbsp
+        单价:
+        <input type="text"value="35"name="price"><br>
+        总价:
+        <input type="text"value="35"name="sum">
+	</form>
+</body>
+<script>
+	var num=mylogin.num;//获取数量
+    var options=mylogin.options;//获取所有option的选项
+    var price=mylogin.price;//获取单价
+    var sum=mylogin.sum;//获取总价
+    num.onchange=function(){
+     sum.value=(num.selectedIndex+1)*price.value;//总价=数量*单价
+    }
+</script>
+</html>

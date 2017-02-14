@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>选项卡</title>
+<style>
+	body,ul,li{
+    margin:0;
+    padding: 0;
+    list-style: none;
+    }
+    .bigbox{
+    	width: 1130px;
+    	height: 550px;
+    	margin: 0 auto;
+    	/*overflow: hidden;*/
+    }
+    .bigbox .title{
+        width: 100%;
+        height: 50px;
+        background-color: pink;
+        line-height: 50px;
+        text-align: center;
+    }
+    .bigbox .title li{
+    	float: left;
+    	width: 33.333333%;
+    	height: 100%;
+        cursor: pointer;
+    }
+    .bigbox .con{
+    	width: 100%;
+    	height: 500px;
+    }
+    .bigbox .con li{
+    	display: none;
+    }
+    .bigbox .title .active{
+    	font-weight: bold;
+    	text-decoration: underline;
+    }
+</style>
+</head>
+
+<script src="function.js"></script>
+
+<body>
+	<div class="bigbox">
+		<ul class="title">
+		    <li class="active">商品街</li>
+		  	<li>原创街</li>
+		  	<li>大牌街</li>	
+		</ul>
+		<ul class="con">
+			<li style="display:block;"><img src="1.jpg"></li>
+			<li><img src="2.jpg"></li>
+			<li><img src="3.jpg"></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var titleF=getClass("title")[0];     //获取父容器title
+	var title=titleF.getElementsByTagName("li");   //获取元素li(title的li)
+	var conF=getClass("con")[0];         //获取父容器con
+	var con=conF.getElementsByTagName("li");       //获取元素li(con的li)
+    for(var i=0;i<title.length;i++){        //通过下标相等来实现效果
+        title[i].aa=i;
+        title[i].onmouseover=function(){   //添加鼠标滑动事件
+          
+            for(var j=0;j<con.length;j++){
+                con[j].style.display="none";  //隐藏所有图片
+                title[j].className="none";  //隐藏所有字体下划线
+
+            }
+             con[this.aa].style.display="block";   //显示一张图片
+             this.className="active";              //显示一个字体的下划线
+           
+        }
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>轮波</title>
+</head> 
+<script src="function.js"></script> 
+<script src="animate.js"></script>
+<style>
+ul,li{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+.banner{
+	width:100%;
+	height: 500px;
+	overflow: hidden;
+	border: 1px solid blue;
+	margin: 0 auto;	
+    position: relative;
+    background-color: #ccc;
+}	
+.imgbox{
+    width: 1130px;
+	height: 500px;
+    margin: 0 auto;
+	position: relative;
+    overflow: hidden;
+	
+}
+.imgbox a{
+	position: absolute;
+    left: 0px;
+    top:0px;
+    opacity:0;
+}
+.btnbox{
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+.btn{
+   width: 30px;
+   height: 30px;
+   background-color: purple;
+   float: left;
+   margin-right: 15px;
+   text-align: center;
+   line-height: 30px;
+   color:#fff;
+   font-size:22px;
+}
+.active{
+    width: 50px;
+    background-color: yellow;
+}
+.left_button{
+width: 50px;
+height: 70px;
+color: white;
+font-size: 40px;
+background-color: black;
+text-align: center;
+line-height: 70px;
+border-radius: 5px;
+position: absolute;
+top: 210px;
+left: 0px;
+margin-left: -5px;
+cursor: pointer;
+opacity: 0.5;
+}
+.right_button{
+width: 50px;
+height: 70px;
+color: white;
+font-size: 40px;
+background-color: black;
+text-align: center;
+line-height: 70px;
+border-radius: 5px;
+position: absolute;
+top: 210px;
+right: 0px;
+margin-right: -5px;
+cursor: pointer;
+opacity: 0.5;
+}
+</style>       
+<body>
+<div class="banner">
+        <div class="imgbox">
+            <a href="#" style="opacity:1"><img src="1.jpg"></a>
+            <a href="#"><img src="2.jpg" ></a>
+            <a href="#"><img src="3.jpg" ></a>
+            <a href="#"><img src="4.jpg" ></a>
+            <a href="#"><img src="5.jpg" ></a>
+            <div class="left_button">&lt</div>
+            <div class="right_button">&gt</div>
+        <ul class="btnbox">
+            <li class="btn active" >1</li>
+            <li class="btn">2</li>
+            <li class="btn">3</li>
+            <li class="btn">4</li>
+            <li class="btn">5</li>
+        </ul>
+        </div>     
+ <div>
+</body>
+<script>
+    var imgbox=getClass("imgbox")[0];     //获取父容器imgbox
+    var imgs=imgbox.getElementsByTagName("a");    //获取imgbox里面的a标签
+    var btn=getClass("btn");             //获取btn标签
+    var bannerBg=["#ccc","red","yellow","blue","plum"];
+    var num=0;                //设置下标
+    function rightMove(type){  
+        //时间函数，相当于for循环，内部只是实现功能的代码
+        type=type||"right";
+        if(type=="right") {
+           num++;                                
+           if(num>=imgs.length){     //从最后一个到第一个循环的条件
+              num=0;
+        }   
+        } else if(type=="left"){
+            num--;                                
+            if(num<0){     
+              num=imgs.length-1;               //将图片变成最后一张
+        }
+        } 
+      
+        for(var i=0;i<imgs.length;i++){
+            imgs[i].style.opacity=0;     //将图片都隐藏起来
+            btn[i].className="btn";      //将按钮效果都隐藏起来
+        }
+        // imgs[num].style.opacity=1;       //一张一张的图片显示出来
+        animate(imgs[num],{opacity:1});
+        btn[num].className="btn active";  //将按钮效果一个个显示出来
+        banner.style.background=bannerBg[num];
+    }
+    var t=setInterval(rightMove,2000);
+     //实现鼠标移入静止，鼠标移出继续的效果   
+    var banner=getClass("banner")[0];       //获得banner
+    banner.onmouseover=function(){     //添加监听事件，鼠标移入清除进程号t
+        clearInterval(t);
+    }
+    banner.onmouseout=function(){
+        t=setInterval(rightMove,2000);    //鼠标移出，继续原来的进程
+    }
+    //单击小圆点切换图片
+    for(var i=0;i<btn.length;i++){
+        btn[i].index=i;
+        btn[i].onclick=function(){
+            for(var j=0;j<imgs.length;j++){
+            imgs[j].style.opacity=0;     //将图片都隐藏起来
+            btn[j].className="btn";      //将按钮效果都隐藏起来
+        }
+            // imgs[this.index].style.opacity=1;
+            animate(imgs[this.index],{opacity:1});
+            btn[this.index].className="btn active";
+            num=this.index;  //定义了两个下标   
+        }
+    }
+
+    //实现左右按钮
+    var left_button=getClass("left_button")[0];
+    var right_button=getClass("right_button")[0];
+    right_button.onclick=function(){
+         rightMove("right");
+    }
+    left_button.onclick=function(){
+         rightMove("left");
+    }
+
+</script>
+</html>

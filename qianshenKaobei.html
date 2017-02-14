@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>8.2学习</title>
+	<script type="text/javascript">
+	//浅拷贝，地址的拷贝
+     // var obj1={"aa":11,"bb":22,"cc":33,"dd":44};
+     // var obj2={};
+     // obj2=obj1;  //将obj1的地址给了obj2
+     // obj1.aa=100;
+     // alert(obj2.aa);
+     //深拷贝，值的拷贝
+     // var obj1={"aa":11,"bb":22,"cc":33,"dd":44};
+     // var obj2={};
+     // for(var i in obj1){//将obj1的值给了obj2
+     // 	 obj2[i]=obj1[i];
+     // }
+     // obj1.aa=100;
+     // alert(obj2.aa);
+
+
+
+    //  var arr1=[24,,,,2,33,,,,67];
+    //  function delUndefined(a){
+    //   	var newarr=[];  //定义一个新的数组存放取出来的值
+	   //  var num=0;   //赋值新数组是下标
+    // for(var i=0;i<a.length;i++){
+	   // if (a[i]!=undefined) {
+	   // newarr[num]=a[i];
+	   // num++;	//新数组下标加一
+	   // }
+    // }
+    // return newarr;
+    // }
+    //  alert(delUndefined(arr1));
+ 
+
+    // //用对象方法实现
+    //   var arr1=[24,,,,2,33,,,,67];
+    //   var obj1={};
+    //   for(var i in arr1){
+    //   	//i;//下标
+    //   	//arr1[i];元素
+    //   	// alert(arr1[i]);
+    //   	obj1[arr1[i]]=true;
+    //   }
+    //   console.log(obj1);   //这个结果为 obj1={24:true,2:true,33:true,67:true}
+    //   var newarr=[];
+    //   var num=0;
+    //   for(var i in obj1){
+    //   	//i;//属性名
+    //   	//arr1[i];//属性值
+    //   	newarr[num]=parseInt(i);
+    //   	num++;
+    //   }
+    //   console.log(newarr);
+
+
+
+    //   var name="班长";  //全局变量
+    //   function aa{      //1.普通函数中
+    //   	alert(this.name); //对象指windows对象(全局)
+    //   }
+    //   aa();             //this指的是windows对象(全局对象),即班长。结果为班长
+
+
+    //   function bb(){//2.构造函数中
+    //   	this.name="构造函数";//指实例化对象
+    //    }
+    //    var one=new bb();
+    //    alert(one.name);   //this指的是one，结果为构造函数
+
+
+    //    function cc(){//3.方法中
+    //    	alert(this.name); //this指对象，谁调用这个方法，this就指谁
+    //    }
+    //    one.fun=cc;
+    //    one.fun();     //this指的是one.结果为构造函数
+
+
+    //    bb.prototype.fun=function(){
+    //    	var that=this;
+    //    	(function(){
+    //    		alert(that.name);
+    //    	})()
+    //    };
+    //    var one=new bb();
+    //    var two=new bb();
+    //    two.name="第二个"
+    //    two.fun();
+
+
+
+
+       function person(name,age,sex){
+           this.name=name;this.age=age;this.sex=sex;
+       }
+       var xiaoLan=new person("小兰",22,"girl");
+       // var age=11;
+       var sex="girl";
+       xiaoLan.say=function(color,height){alert(this.name+"~"+this.age+"~"+this.sex);alert(color+"种人");alert("身高:"+height+"cm")};
+       var xiaoMing=new person("小明",24,"boy");
+       xiaoLan.say.call(xiaoMing,"黄","180");
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

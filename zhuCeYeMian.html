@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords"content=""/>
+<meta name="description" content="本篇网页的概述，一段话，对网站的进一步描述"/>
+<meta name="author"  content="网页作者的资料">
+<meta name="robots" content="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>注册页面</title>
+
+</head>
+<form action="1.php" method="post">
+<fieldset>
+          <legend>基本信息</legend>
+        账号：<input type="text" value="请输入账号" name="username" size="20" maxlength="6"><br>
+        密码：<input type="password" value="请输入密码" name="userps" size="20"
+		maxlength="6"><br>
+		性别：<label for="man">男：</label><input type="radio" value="boy" name="sex" checked="checked" id="man">
+                   <label for="woman">女: </label> <input type="radio" value="girl" name="sex" id="woman"><br>
+</fieldset>
+        爱好：音乐：<input type="checkbox" value="music"name="hobby">
+		           美术：<input type="checkbox" value="draw"name="hobby">
+		           阅读：<input type="checkbox" value="read"name="hobby">
+		城市：<select size="2" name="city" multiple>
+                         <option>太原</option>
+						 <option selected="selected" value="临汾">临汾</option>
+						 <option>忻州</option>
+						 <option>晋中</option>
+				   </select>
+				   <textarea rows="5" cols="30">请留言...</textarea>
+		<input type="submit"value="注册" >
+
+
+
+
+
+</form>
+<body>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>全选全不选反选</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+</head>
+<style>
+	
+</style>
+<body>
+	<!-- <form action=""method=""name="mylogin">
+		<p>1:<input type="checkbox"></p>
+        <p>2:<input type="checkbox"></p>
+        <p>3:<input type="checkbox"></p>
+        <p>4:<input type="checkbox"></p>
+        <p>5:<input type="checkbox"></p>
+        <p>6:<input type="checkbox"></p>
+        <p>7:<input type="checkbox"></p>
+        <p>8:<input type="checkbox"></p>
+        <p>9:<input type="checkbox"></p>
+        <p>10:<input type="checkbox"></p>
+        全选:<input type="radio">全不选<input type="radio">反选<input type="radio">
+
+	</form> -->
+</body>
+<script>
+    for(var i=0;i<10;i++){
+        document.write((i+1)+":&nbsp;<input type='checkbox' name='box'><br>");//放置十个框
+    }
+    document.write("全选:<input type='radio' name='btn'>&nbsp&nbsp");   //放置三个框
+    document.write("全不选:<input type='radio' name='btn'>&nbsp&nbsp");
+    document.write("反选:<input type='radio' name='btn'>&nbsp&nbsp");
+    var btn=document.getElementsByName("btn");
+    var box=document.getElementsByName("box");
+    for(var i=0;i<btn.length;i++){
+        btn[i].aa=i;
+        btn[i].onclick=function(){   
+       //添加单击事件 
+           if(this.aa==0){     //为全选  遍历多选框，全部状态为true;
+              for(var j=0;j<box.length;j++){
+                box[j].checked=true;
+              }
+           }
+           else if(this.aa==1){
+               for(var j=0;j<box.length;j++){
+                box[j].checked=false;
+              }
+           }
+           else if(this.aa==2){
+               for(var j=0;j<box.length;j++){
+                if(box[j].checked){
+                    box[j].checked=false;
+                }else{
+                    box[j].checked=true;
+                }
+              }
+           }
+        }
+    }
+</script>
+</html>

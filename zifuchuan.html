@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	//查找相同字符串的位置 
+    var str="http://www.sxuek.com,优逸客课程体系:http://www.sxuek.com/uisj/,优逸客学生作品:http://www.sxuek.com/sxzp/";
+  // 方法一:
+  // var chazhao=[]; 
+  // var num=0;
+  // while(str.match("sxuek")){
+  // 	chazhao[num]=str.indexOf("sxuek");  
+  // 	str=str.replace("sxuek","111111");
+  // 	num++;
+  //   }
+  // alert(chazhao);
+   // 方法二：
+   // 	  var arr=[];
+   //    var num=0;
+   //    var n=0;
+   //    while(str.match("sxuek")){
+   //    arr.push(str.indexOf("sxuek")+n); //查找出sxuek的位置，存放到数组中
+   //    str=str.slice(0,str.indexOf("sxuek"))+str.slice(str.indexOf("sxuek")+5); //删除sxuek后的字符串
+   //    num++;
+   //    n+=5;
+   // }	
+   // alert(arr);
+// 方法二，加函数：
+   // // function sea(){
+   // 	  var arr=[];
+   //    var num=0;
+   //    var n=0;
+   //    while(str.match("sxuek")){
+   //    	arr.push(str.indexOf("sxuek")+n);
+   //    str=str.slice(0,str.indexOf("sxuek"))+str.slice(str.indexOf("sxuek")+5);
+   //    num++;
+   //    n+=5;
+   //    // return arr;
+   // }
+   // alert(arr);  	
+   // // alert(sea());
+
+
+·11
+
+   //去重复值
+   //方法一：遍历数组，将数组中的值与新数组的值进行比较。如果不等就将数存到新数组中，如果相等，就不向新数组中添加元素。
+  // var arr1=[2,34,12,3,2,4,2,67,32];
+  //  function delPre(arr){
+  //     var newarr=[];
+  //     for(var i in arr){
+  //     	if(checkPre(newarr,arr[i])){  //if条件为true时执行  //调用checkPre函数
+  //         newarr.push(arr[i]);    //向新数组中添加元素
+  //     	}
+  //     }
+  //     return newarr;            //返回新数组
+  //  }
+  //  function checkPre(a,val){    //a表示新数组，val表示从arr数组中取的值，第一次取2时，val为2，a[i]为undefined,条件不满足，返回true;第二次取34时，val为34，a[i]为2，条件不满足，不处理,最终返回true。
+  //  	 for(var i in a){  //遍历A数组
+  //  	 	if(a[i]==val){
+  //        	 return false;
+  //  	 	}
+  //  	 }
+  //  	 return true;  //遍历完a数组后返回true
+  //  }
+  //  alert(delPre(arr1))
+
+   //方法二：遍历数组，将取出来的每个值和没取出来的每个值进行比较，如果不等，存到新的数组中，如果相等，就删除该元素。
+  // var arr1=[2,34,12,3,2,4,2,67,32];
+  // function delPre2(arr){
+  // 	newarr=[];
+  // 	for(var i=0;i<arr.length;i++){  //取出数组第一个数
+  // 		var flag=1;//开关的思想
+  // 		for(var j=i+1;j<arr.length;j++){ //取出数组第二个数  //遍历第一个数后面的所有数
+  //            if(arr[i]==arr[j]){
+  //            	flag=2;
+  //            	break;
+  //            }
+  // 		}
+  // 		if(flag==1){   //flag控制是否输出数
+  // 			newarr.push(arr[i]);
+  // 		}	
+  // 	}
+  // 	return newarr;
+  // }
+  // alert(delPre2(arr1));
+
+
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

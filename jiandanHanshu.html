@@ -1,0 +1,459 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>流程控制</title>
+	<script type="text/javascript">
+	// var num=prompt("请输入一个数字","");
+	// if(num%2==0)
+	// alert("偶数");
+// 模拟登录功能
+   // var ps=123;
+   // var num=prompt("请输入密码","");
+   // if (ps==num){
+   // 		alert("登录成功");
+   // } 
+   // else{
+   // 	alert("登录失败");
+   // }
+
+// var num=prompt("请输入成绩","");
+// if(num==100){
+// 	alert("满分");
+// }
+// else if(num>=90&&num<100) {
+//     alert("优秀");
+// }
+// else if(num>=80&&num<90) {
+// 	alert("良好");
+// }
+// else if(num>=70&&num<80) {
+// 	alert("中等");
+// }
+// else if(num>=60&&num<70){
+// 	alert("合格");
+// }
+// else if(num>0&&num<60){
+// 	if(num<20){
+// 		alert("回家");
+// 	}
+// 	else if(num<=40){
+// 		alert("留级");
+// 	}
+// 	else{
+// 		alert("补考");
+// 	}
+	
+// }
+// else{
+//     alert("请输入有效成绩");
+//     };
+// var num=prompt("","");
+// // alert(typeof num);
+// switch(num){
+// 	case "1":alert("星期一");
+// 	break;
+// 	case "2":alert("星期二");
+// 	break;
+// 	case "3":alert("星期三");
+// 	break;
+// 	case "4":alert("星期四");
+// 	break;
+// 	case "5":alert("星期五");
+// 	break;
+// 	case "6":alert("星期六");
+// 	break;
+// 	case "7":alert("星期日");
+// 	break;
+// 	default:alert("输入错误")
+// }
+
+//实现两个数的加减乘除
+// var a=parseInt(prompt("请输入一个数字",""));
+// alert(a);
+
+// var b=parseInt(prompt("请输入一个数字",""));
+// var c=prompt("加减乘除","");
+// alert(b);
+// if(!a && !b){
+// 	  alert("请输入数字");
+// 	}
+// else{ 
+// 	switch(c){
+// 	case "+":alert(a+b);
+// 	break;
+// 	case "-":alert(a-b);
+// 	break;
+//     case "*":alert(a*b);
+//     break;
+//     case "/":alert(a/b);
+//     break;
+//     default:alert("输入错误");
+//      }
+// } 
+// for(var i=1;i<=10;i++){
+// 	alert(i);
+// } 
+// for(var i=11;i<=15;i++){
+// 	document.write(i/10+'&nbsp');
+// }
+// document.write('<br>');
+// for(var i=21;i<=25;i++){
+// 	document.write(i/10+'&nbsp');
+// }
+//输出1.1 1.2 1.3 1.4 1.5 
+// 2.1 2.2 2.3 2.4 2.5 
+// for(var j=1;j<=2;j++){//整数
+// 	for(var i=1;i<=5;i++){//小数
+// 	document.write(j+"."+i+"&nbsp");
+// }
+//    document.write("<br>");
+// }
+//5行5列的表格，可以实现隔行换色、
+// var color="";
+// document.write("<table border='1'>");
+// for(tr=0;tr<5;tr++){
+// 	if(tr%2==0){
+//       color="#ccc";
+// 	}else{
+// 		color="#101bf5";
+// 	}
+// document.write("<tr bgcolor="+color+">");
+// for(td=0;td<5;td++){
+// document.write("<td>"+1111111);
+// document.write("</td>");
+// }
+// }
+// document.write("</tr>");
+// document.write("</table>");
+// for(var j=1;j<=2;j++){//行数
+// 	for(var i=1;i<=5;i++){//列数
+// 	document.write(j+"."+i+"&nbsp");
+// }
+//    document.write("<br>");
+// }
+// var color="";
+// document.write("<table style='border:1px solid red'>");
+// for(tr=0;tr<5;tr++){
+// document.write("<tr>");
+// for(td=0;td<5;td++){
+// 	if (tr%2==0&&td%2==1) {
+// 		color="#ccc";
+// 	}
+// 	else if(tr%2==1&&td%2==0){
+// 		color="101bf5";
+// 	}
+// 	else{
+// 		color="ffffff";
+// 	}
+// 	;
+// document.write("<td style='border:1px solid red'bgcolor="+color+">"+1111111);
+// document.write("</td>");
+// }
+// }
+// document.write("</tr>");
+// document.write("</table>");
+
+// var i=1;
+// while(i<=9){
+// 	console.log(i);
+// 	i+=2;
+// }
+// var i=11;
+// while(i<=15){
+// 	console.log(i/10);
+// 	i++;
+// }
+// for(var j=1;j<=2;j++){//整数
+// 	for(var i=1;i<=5;i++){//小数
+// 	document.write(j+"."+i+"&nbsp");
+// }
+//    document.write("<br>");
+// }
+
+
+// var j=1;
+// while(j<=2){
+// 	var i=1;
+// 	while(j<=5){
+// 		document.write(j+"."+i+"&nbsp");
+// 		i++;
+// 	}
+// 	document.write("<br>");
+// 	j++;
+// }
+
+
+// 九九乘法表
+// for(var hang=1;hang<=9;hang++){
+// 	for(var lie=1;lie<=hang;lie++){
+// 		if(lie==2&&(hang==3||hang==4)){
+//         document.write(lie+"*"+hang+"="+lie*hang+"&nbsp;&nbsp;&nbsp;");
+// 		}
+// 		else{
+// 		document.write(lie+"*"+hang+"="+lie*hang+"&nbsp;");
+// 		}
+// 	}
+// 	document.write("<br>");
+// }
+//排队
+// for(var a=101;a<200;a++){
+// 	if(a%3==1 && a%4==2 && a%5==3){
+// 	document.write(a);
+//     }
+// }
+//鸡兔同笼
+// for(a=1;a<=34;a++){
+//     if(2*a+4*(34-a)==96){
+//   console.log("鸡有"+a+"只"+"兔子有"+(34-a)+"只");	
+//    }
+//    }
+//金字塔星星
+// for(i=1;i<=5;i++){
+//    for(j=i;j<=4;j++){
+//                if(i!=4){
+//                    document.write("&nbsp;");
+//                           }
+//                         }
+                        
+//                         for(a=1;a<=i;a++){
+//                           if(i!=4){
+                          
+//                             document.write("*");
+//                             document.write("&nbsp;");
+                            
+//                           }
+//                         }
+//                         if(i!=4){
+//                         document.write("<br>");
+//                       }
+
+//                       }
+
+// var jinziTa=function(hang){
+// 	for( var i=1;i<=hang;i++){
+// 	for( var k=1;k<=(hang-i);k++){
+// 		document.write("&nbsp;");
+//          }
+// 	   for( var j=1;j<=i;j++){
+//         document.write("*"+"&nbsp;");
+// 	   }
+// 	document.write("<br>");
+//        };
+// };
+// jinziTa(10);
+
+// function demo(){
+// 	alert(arguments.length);
+// 	alert(arguments[0]+"~"+arguments[1]+"~"+arguments[2]);
+// }
+// demo("abc",true,400);
+
+// return可以返回一个函数
+// function demo1(){
+// 	return function(){
+// 		return 3;
+// 	}
+// }
+// alert(demo1());
+// return也可以返回3
+// function demo1(){
+// 	return function(){
+// 		return 3;
+// 	}
+// }
+// alert(demo1()());
+
+
+// for(var i=1;i<=10;i++){
+// 	jinziTa();
+// };
+
+// function jinziTa(){
+// 	for(i=1;i<=4;i++){
+// 	for(k=1;k<=(4-i);k++){
+// 		document.write("&nbsp;");
+//          }
+// 	   for(j=1;j<=i;j++){
+//         document.write("*"+"&nbsp;");
+// 	   }
+// 	document.write("<br>");
+//        };
+// }
+// for(var i=1;i<=10;i++){
+// 	jinziTa();
+// };
+
+
+//十行十列表格
+ // var color="";
+// document.write("<table style='border:1px solid red'>");
+// for(tr=0;tr<5;tr++){
+// document.write("<tr>");
+// for(td=0;td<5;td++){
+// 	if (tr%2==0&&td%2==1) {
+// 		color="#ccc";
+// 	}
+// 	else if(tr%2==1&&td%2==0){
+// 		color="101bf5";
+// 	}
+// 	else{
+// 		color="ffffff";
+// 	}
+// 	;
+// document.write("<td style='border:1px solid red'bgcolor="+color+">"+1111111);
+// document.write("</td>");
+// }
+// }
+// document.write("</tr>");
+// document.write("</table>");
+
+// document.write("<table border='1'>");
+// for(tr=0;tr<10;tr++){
+// 	document.write("<tr>");
+// 	for(td=0;td<10;td++){
+// 	document.write("<td>"+111);	
+// 	}
+// }
+// document.write("</td>");
+// document.write("</tr>");
+// document.write("</table>");
+
+// document.write("</tr>");
+// document.write("</table>");
+
+// var color="";
+// document.write("<table border='1'>");
+// for(tr=0;tr<10;tr++){
+// 	document.write("<tr>");
+// 	for(td=0;td<10;td++){
+// 		if (tr%2==0&&td%2==0){
+// 			color="#ccc";
+// 	    }
+// 	else if(tr%2==1&&td%2==1){
+// 		color="#101bf5";
+// 	}
+// 	else{
+// 		color="#ffffff";
+// 	};
+// 	document.write("<td bgcolor="+color+">"+111);	
+// 	}
+// }
+// document.write("</td>");
+// document.write("</tr>");
+// document.write("</table>");
+//九九乘法表
+// for(var hang=1;hang<=9;hang++){
+// 	for(var lie=1;lie<=hang;lie++){
+// 		if(lie==2&&(hang==3||hang==4)){
+// 	     document.write(lie+"*"+hang+"="+lie*hang+"&nbsp;&nbsp;&nbsp;");
+// 		}
+//          else{
+//          	document.write(lie+"*"+hang+"="+lie*hang+"&nbsp;");
+// 	}
+// }
+// 	document.write("<br>");
+// }
+
+// var hang=1;
+// while(hang<=9){
+// 	var lie=1;
+// 	while(lie<=hang){
+// 		document.write(lie+"*"+hang+"="+lie*hang+"&nbsp;");
+// 	}
+// }
+// var tab="<table border='1'>";
+// for(var i=0;i<10;i++){
+// 	tab+="<tr>";
+//       for(var j=0;j<10;j++){
+// 			tab+="<td>1111";
+// 			tab+="</td>";
+// 		};
+// 	tab+="</tr>";
+// };
+// tab+="</table>";
+// document.write(tab);
+
+
+// var tab="<table border='1'>";
+// for(var i=0;i<10;i++){
+// 	tab+="<tr>";
+//       for(var j=0;j<10;j++){
+// 			tab+="<td>1111";
+// 			tab+="</td>";
+// 		};
+// 	tab+="</tr>";
+// };
+// tab+="</table>";
+// document.write(tab);
+
+/*预解析*/
+// function aa(){
+// 	alert("这是第一个函数");
+// }
+
+//  var aa=function(){
+// 	alert("这是第二个函数");
+// }
+// aa();
+
+// var a;
+// alert(a);
+//输出结果为90,30
+// function demo(){
+// 	aa=30;
+// 	function demo2(){
+// 		var aa=90;
+// 		alert(aa);
+// 	}
+// 	demo2();
+// }
+// demo();
+// alert(aa);
+
+//全局变量在函数内部是看不到的，只有函数运行后可以解析到。
+// function aa(){
+// 	num=30;
+// }
+// // aa();
+// alert(num);urn
+
+//结果为101
+// function aa(num){
+// 	num=100;
+// 	return function bb(){
+// 		return ++num;
+// 	}
+// }
+// alert(aa(300)());
+//结果为function bb(){
+		// return ++num;
+	// }
+// function aa(num){
+// 	num=100;
+// 	return function bb(){
+// 		return ++num;
+// 	}
+// }
+// alert(aa(300));
+
+//自调用函数的匿名函数将zhangsan给了name,执行return后的语句看后面的整体函数
+// 有预解析,所以现在内存中开辟出容量var name="",所以typeof name=="undefined"语句为真，所以输出name值为lisi
+var fun=(function(name){
+	return function(){
+		if (typeof name=="undefined") {
+			var name="lisi";
+			console.log(name);
+		}else{
+			console.log(name);
+		}
+	}
+})("zhangsan")
+fun()
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

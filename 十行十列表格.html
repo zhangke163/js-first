@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>十行十列表格</title>
+	<script type="text/javascript">
+	//方法一：输出十行十列交叉换色表格
+	// var color="";
+	// document.write("<table border='1'>");
+	// for(tr=1;tr<=10;tr++){
+	//        for(var td=1;td<=10;td++){
+	//        	if(tr%2==0&&td%2==1){
+ //                color="#ccc";
+	//        	}
+	//         else if (tr%2==1&&td%2==0) {
+ //                 color="blue";
+	//         }
+	//         else{
+ //                color="ffffff";
+	//         };
+	// 	document.write("<td bgcolor="+color+">"+12345+"</td>");
+	//             }
+	//     document.write("</tr>");
+	// }
+	// document.write("</table>");
+
+	// var tab="<table border='1'>";
+// for(var i=0;i<10;i++){
+// 	tab+="<tr>";
+//       for(var j=0;j<10;j++){
+// 			tab+="<td>1111";
+// 			tab+="</td>";
+// 		};
+// 	tab+="</tr>";
+// };
+// tab+="</table>";
+// document.write(tab);
+	//方法二：输出十行十列交叉换色表格
+// var tab="<table border='1'>";
+// for(var i=0;i<10;i++){
+// 	  tab+="<tr>";
+// 	  for(var j=0;j<10;j++){
+// 	  	tab+="<td>1111";
+// 	  		tab+="</td>";
+	  
+// 	  	};
+// 	  }
+// tab+="</tr>";
+// tab+="</table>";
+// document.write(tab);
+     // alert(tab);
+
+     //十行十列可以改行数列数和颜色
+ //     var color="";
+	// document.write("<table border='1'>");
+	// for(tr=1;tr<=10;tr++){
+	//        for(var td=1;td<=10;td++){
+	//        	if(tr%2==0&&td%2==1){
+ //                color="#ccc";
+	//        	}
+	//         else if (tr%2==1&&td%2==0) {
+ //                 color="blue";
+	//         }
+	//         else{
+ //                color="ffffff";
+	//         };
+	// 	document.write("<td bgcolor="+color+">"+12345+"</td>");
+	//             }
+	//     document.write("</tr>");
+	// // }
+	// document.write("</table>");
+	
+	function tab(hang,lie,color1,color2,color3){
+		var hang,lie,color="";
+		document.write("<table border='1'>");
+	for(tr=1;tr<=hang;tr++){
+	       for(var td=1;td<=lie;td++){
+	       	if(tr%2==0&&td%2==1){
+                color=color1;
+	       	}
+	        else if (tr%2==1&&td%2==0) {
+                 color=color2;
+	        }
+	        else{
+                color=color3;
+	        };
+		document.write("<td bgcolor="+color+">"+12345+"</td>");
+	            }
+	    document.write("</tr>");
+	}
+	document.write("</table>");
+	}
+	tab(10,10,"#ffffff","#870000","#fff000")
+	</script>
+
+</head>
+<body>
+	
+</body>
+</html>

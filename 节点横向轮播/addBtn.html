@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>横向节点轮播</title>
+	<script src="function.js"></script>
+	<script src="animate.js"></script>
+
+</head>
+<style type="text/css">
+.bigbox{
+width: 1030px;
+height: 400px;
+margin: 0 auto;	
+border: 10px solid black;
+margin: 0 auto;
+overflow: hidden;
+position: relative;
+background-color: black;
+}
+.banner{
+height: 400px;
+
+}	
+.imgs{
+width: 250px;
+height: 400px;
+line-height: 400px;
+float:left;
+text-align: center;
+overflow: hidden;
+margin-right: 10px;
+}
+.imgs1{
+	background-color: blue;
+}
+.imgs2{
+	background-color: yellow;
+}
+.imgs3{
+	background-color: red;
+}
+.imgs4{
+	background-color: pink;
+}
+.imgs5{
+	background-color: green;
+}
+.btn1{
+	width: 30px;
+	height: 30px;
+	background-color: black;
+position: absolute;
+	top:170px;
+	left: 0;
+}
+.btn2{
+	width: 30px;
+	height: 30px;
+	background-color: black;
+	position: absolute;
+	top:170px;
+	right: 0;
+}
+</style>
+<body>
+	<div class="bigbox">
+	<div class="banner">
+		<div class="imgs">1</div>
+		<div class="imgs">2</div>
+		<div class="imgs">3</div>
+		<div class="imgs">4</div>
+		<div class="imgs">5</div>
+	</div>
+	<div class="btn1"></div>
+	<div class="btn2"></div>
+	</div>
+</body>
+<script>
+	var imgs=$(".imgs");
+	for(var i=0;i<imgs.length;i++){
+       imgs[i].className="imgs imgs"+(i+1);
+	}
+	var banner=$(".banner")[0];
+	banner.style.width=(imgs.length*imgs[0].offsetWidth+"px");
+	function hChange(){
+		var last=getLast(banner);
+		banner.insertBefore(last,getFirst(banner));
+		last.style.width="0";
+		animate(last,{width:250},300);
+	}
+	var t=setInterval(hChange,2000);
+
+
+	var btn1=$(".btn1")[0];
+    var btn2=$(".btn2")[0];
+	
+	btn1.onclick=function(){
+     insertAfter(banner,getFirst(banner),getLast(banner));
+			getLast(banner).style.width="250px";
+	}
+</script>
+</html>

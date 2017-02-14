@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>金字塔星星</title>
+	<script type="text/javascript">
+	//金字塔星星四行
+	// for(var i=0;i<4;i++){
+	// 	for(var k=0;k<=(4-i);k++){
+	// 		document.write("&nbsp;")
+	// 	}
+	// 	for(var j=0;j<=i;j++){
+	// 		document.write("*"+"&nbsp;");
+	// 	}
+	// 	document.write("<br>");
+	// }
+	//随意几行呈金字塔排列
+	var jinzita=function (hang){
+		for(var i=0;i<hang;i++){
+			for(var k=0;k<(hang-i);k++){
+				document.write("&nbsp");
+			}
+			for(var j=0;j<=i;j++){
+			document.write("*"+"&nbsp");
+		    }
+		    document.write("<br>");
+			}	
+	}
+	jinzita(20);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
